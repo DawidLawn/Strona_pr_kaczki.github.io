@@ -1,0 +1,314 @@
+/*global styling*/
+
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html{
+    position: relative;
+    overflow-x: hidden;
+    color:white;
+    font-size:10px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&display=swap');
+
+/*header styling*/
+
+header{
+    background-color:#333;
+    color:white;
+    height:100vh;
+    width:100vw;
+    background-image: url(img/pexels-hasan-albari-1229861.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position:fixed;
+    z-index:1;
+    top:0;
+    left:0;
+}
+
+header h1{
+    font-weight: bold;
+    font-size:4rem;
+    margin-right:auto;
+    margin-left:auto;
+    text-align:center;
+    margin-top:4rem;
+    transition:all .9s ease-in-out;
+    cursor: pointer;
+}
+
+header h1:hover{
+    transform:scale(1.2);
+}
+
+
+header h2{
+    position: absolute;
+    top:50vh;
+    font-size:2rem;
+    left:10vw;
+    animation: headh2 5s ease-in-out infinite;
+}
+
+#arrow{
+    width:96px;
+    height:96px;
+    border:3px solid black;
+    border-radius:50%;
+    position:absolute;
+    top:80vh;
+    left:40vw;
+    overflow:hidden;
+}
+
+#arrow .fa-solid{
+    font-size:40px;
+    position:absolute;
+    top:30%;
+    left:28%;
+    text-align: center;
+    text-shadow: 0px -15px 0 white, 0 -30px 0 white;
+    color:white;
+    transition:all 0.4s linear;
+    animation: arrows 1.2s linear infinite;
+}
+
+
+/*nav style*/
+
+#menu_nav{
+    position:fixed;
+    transition:all .5s linear;
+    position:fixed;
+    background-color:greenyellow;
+    width:100px;
+    height:100px;
+    top:-60px;
+    right:-60px;
+    z-index:4;
+    border-radius:50%;
+    cursor:pointer;
+}
+
+#menu_nav:hover nav{
+    display:block;
+    transform:translateX(0vw);
+    animation: menu_anim .8s ease-in-out;
+}
+
+nav{
+    background-color:#555;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    display:none;
+    transform:translateX(100vw);
+    
+}
+
+nav ul{
+    display:flex;
+    flex-direction:column;
+    font-size:5rem;
+    align-items:center;
+    position:absolute;
+    top:22vh;
+    width:100vw;
+}
+
+nav li{
+    margin-bottom:2vh;
+    height:12vh;
+    transition:all .7s ease-in-out;
+    width:100%;
+    text-align: center;
+    list-style: none;
+    vertical-align: middle;
+    color:white;
+    text-decoration: none;
+    width:60vw;
+}
+
+a{
+    text-decoration: none;
+    color:white;
+}
+
+nav li:hover{
+color:greenyellow;
+border-left: 2px double greenyellow;
+border-right: 2px double greenyellow;
+
+}
+/*main styling*/
+main{
+    position:relative;
+    margin-top:100vh;
+    width:100vw;
+    height:100vh;
+    background-color:#444;
+    z-index:2;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    font-family: 'IBM Plex Serif', serif;
+    overflow: hidden;
+}
+
+main h2{
+    position: relative;
+    top:7vh;
+    margin-left:3vw;
+    margin-right:3vw;
+    text-align: center;
+    font-size:2.4rem;
+}
+
+main h3{
+    position:relative;
+    top:15vh;
+    margin-left:5vw;
+    margin-right:5vw;
+    font-size:2rem;
+}
+
+main h4{
+    position:relative;
+    top:29vh;
+    left:1vw;
+    opacity:0.7;
+    font-size:2rem;
+    
+}
+
+.m_img1{
+    margin-top:2vh;
+    position: relative;
+    width:70%;
+    margin-left:3vw;
+}
+
+#ad{
+    position:absolute;
+    top:80vh;
+    left:70vw;}
+#ad h3{
+    font-size:1.5rem;
+    opacity:0;
+}
+
+#ad .fa-brands{
+    font-size:3rem;
+    position:absolute;
+    top:10vh;
+    left:15vw;
+    transition:all .5s ease-in-out;
+    border-radius:50%;
+    cursor:pointer;
+}
+#ad .fa-brands:hover{
+    background-color:rgb(166, 0, 231);
+    color:aliceblue;
+}
+
+#ad .fa-brands:hover h3{
+    opacity:1;
+}
+
+
+/*scrollbar stylign*/
+body::-webkit-scrollbar {
+    width: 4px;               /* width of the entire scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background:#333;        /* color of the tracking area */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 255, 255);    /* color of the scroll thumb */
+  }
+/*animations*/
+
+@keyframes headh2 {
+    0%{transform:rotateX(0deg); color:white;}
+    50%{transform:rotateX(360deg); color:rgb(126, 126, 126);}
+    75%{transform:rotateY(360deg); color:#444;}
+    100%{transform:rotate(0deg); color:white;}
+}
+
+@keyframes menu_anim {
+    0%{transform:translateX(100vw);}
+    100%{transform:translateX(0vw);}
+}
+
+@keyframes arrows {
+    0%{transform:translateY(-100px);}
+    100%{transform:translateY(200px);}
+}
+/*media*/
+
+@media (max-width:350px){
+    main h4{font-size:1.4rem;}
+}
+@media (max-width:1000px) {
+    #menu_nav{display:none;}
+}
+
+@media (min-width:600px){
+    header h1{
+        font-size:6rem;
+        left:15rem;
+    }
+
+    header h2{
+        font-size:4rem;
+    }
+    main{height:150vh;}
+
+    main h2{
+        font-size:5rem;
+    }
+
+    main h3{
+        font-size:4rem;
+    }
+    main h4{
+        top:25vh;
+    }
+    .m_img1{
+    width:30%;
+    }
+
+    #arrow{
+        width:200px;
+        height:100px;
+        border-radius: 20px;
+        left:42.5%;
+        transition:.4s ease-in-out;
+        cursor:pointer;
+    }
+
+    #arrow:hover{
+        border:4px solid white;
+        border-radius:25px;
+    }
+
+    #arrow .fa-solid{
+        font-size:5rem;
+        left:38%;
+    }
+
+    #ad .fa-brands{
+        font-size:6rem;
+        top:5vh;
+    }
+}
